@@ -27,7 +27,7 @@
                 <option disabled value="value" selected >Оберіть початковий рік</option>
                 <?php
                     include 'connector.php';
-                    $stmt = $dbh->prepare("SELECT DISTINCT YEAR FROM literature");
+                    $stmt = $dbh->prepare("SELECT DISTINCT YEAR FROM literature ORDER BY YEAR");
                     $stmt->execute();
                     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                         echo "<option value=\"{$row['YEAR']}\">{$row['YEAR']}</option>";
@@ -39,7 +39,7 @@
                 <option disabled value="value" selected>Оберіть кінцевий рік</option>
                 <?php
                     include 'connector.php';
-                    $stmt = $dbh->prepare("SELECT DISTINCT YEAR FROM literature");
+                    $stmt = $dbh->prepare("SELECT DISTINCT YEAR FROM literature ORDER BY YEAR");
                     $stmt->execute();
                     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                         echo "<option value=\"{$row['YEAR']}\">{$row['YEAR']}</option>";
